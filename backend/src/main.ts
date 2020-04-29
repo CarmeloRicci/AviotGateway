@@ -4,8 +4,8 @@ const app = express();
 app.use(bodyParser.json());
 
 const pubApiPingRoute = require('./routes/public/pingRoutes');
-app.use('/ping', pubApiPingRoute);
 
+app.use('/ping', pubApiPingRoute);
 
 require('./resolv');
 

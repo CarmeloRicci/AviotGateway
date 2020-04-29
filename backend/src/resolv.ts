@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const path = require('path');
 const cfg = require('config');
@@ -7,6 +6,7 @@ const resolvService = new ResolvService();
 const delay = require('delay');
 
 (async () => {
+    
     console.log("RESOLV: Inizio");
     const result = await delay(10000);
     console.log("RESOLV: Sono passati 10 secondi");
