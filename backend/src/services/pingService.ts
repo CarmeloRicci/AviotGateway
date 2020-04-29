@@ -104,6 +104,7 @@ export default class PingService {
             if (mac_gw) {
                 const postrouting_rule = `sudo ebtables -t nat -A POSTROUTING -o edge0 -j snat --to-src ${mac_gw.replace(/\r?\n|\r/, "")} --snat-arp --snat-target ACCEPT`;
                 const { stdout, stderr } = await exec(postrouting_rule);
+                console.log (`sudo ebtables -t nat -A POSTROUTING -o edge0 -j snat --to-src ${mac_gw.replace(/\r?\n|\r/, "")} --snat-arp --snat-target ACCEPT`)
                 console.log('stdout:', stdout);
                 console.log('stderr:', stderr);
             }
@@ -117,9 +118,11 @@ export default class PingService {
             const { stdout, stderr } = await exec(`sudo ebtables -t nat -A PREROUTING -p ARP -i edge0 --arp-ip-dst ${ip} -j dnat --to-dst ${mac_address} --dnat-target ACCEPT`);
             console.log('stdout:', stdout);
             console.log('stderr:', stderr);
+            console.log(`sudo ebtables -t nat -A PREROUTING -p ARP -i edge0 --arp-ip-dst ${ip} -j dnat --to-dst ${mac_address} --dnat-target ACCEPT`);
             const { stdout1, stderr1 } = await exec(`sudo ebtables -t nat -A PREROUTING -p IPv4 -i edge0 --ip-dst ${ip} -j dnat --to-dst ${mac_address} --dnat-target ACCEPT`);
             console.log('stdout1:', stdout1);
             console.log('stderr1:', stderr1);
+            console.log(`sudo ebtables -t nat -A PREROUTING -p IPv4 -i edge0 --ip-dst ${ip} -j dnat --to-dst ${mac_address} --dnat-target ACCEPT`);
         } catch (error) {
             console.log('error:', error);
         }
