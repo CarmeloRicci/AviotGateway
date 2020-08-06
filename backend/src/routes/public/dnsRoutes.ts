@@ -12,9 +12,8 @@ router.post('/', async (req, res) => {
     //API che sta in ascolto per ricevere i dati dal DHCP server ed elaborali
     try {
         const params = body && body.params ? body.params : null;
-        console.log("PARAMS", params);
+        console.log("dnsRoutes:" , "PARAMS", params);
         if (params && params.dns) {
-            console.log("dnsRoutes: received " + params.dns);
             await dnsService.execute(params.dns);
         }
         res.status(HttpStatus.OK).send();

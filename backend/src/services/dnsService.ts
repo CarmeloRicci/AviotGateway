@@ -12,8 +12,8 @@ import { Utilities } from '../shared/utilities';
 
 export default class DnsService {
 
-    async execute(dns: string[]) {
-        console.log('Ho ricevuto il nuovo dns', dns)
+    async execute(dns: string) {
+        await console.log('Ho ricevuto il nuovo dns', dns)
     }
 
     async GetDnsForResolv (){
