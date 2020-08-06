@@ -10,6 +10,7 @@ const pubApiDnsRoute = require('./routes/public/dnsRoutes');
 app.use('/dns_response', pubApiDnsRoute);
 
 //require('./resolv');
+require('./dns');
 
 
 app.listen(3800, () => {
