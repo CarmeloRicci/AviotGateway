@@ -47,13 +47,13 @@ export default class DnsService {
             method: 'POST',
             body: {
                 params: {
-                    ips: firstdns
+                    ipdns: firstdns
                 }
             },
             json: true
         };
         await Utilities.request(request_data);
-        console.log("DnsService - SendPostRequest: Post send!")
+        console.log("DnsService - SendPostRequest: Post send! " + `(http://${cfg.general.ipDnsServer}:3800/)`)
     }
 
 
