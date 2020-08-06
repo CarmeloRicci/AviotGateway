@@ -27,8 +27,7 @@ export default class DnsService {
 
             for (let i in splitted) {
                 console.log(splitted)
-                console.log("--> [",i,"] ",splitted[i]);
-
+                if (splitted[0] === 'nameserver') return splitted[1]
             //console.log("-----------------");
             //splitted.lenght();
             //console.log(data_file);
@@ -54,7 +53,7 @@ export default class DnsService {
             json: true
         };
         await Utilities.request(request_data);
-        console.log("DnsService - SendPostRequest: Post send! " + `(http://${cfg.general.ipDnsServer}:3880/dns_request)`)
+        await console.log("DnsService - SendPostRequest: Post send! " + `(http://${cfg.general.ipDnsServer}:3880/dns_request)`)
     }
 
 
