@@ -4,11 +4,12 @@ const app = express();
 app.use(bodyParser.json());
 
 const pubApiPingRoute = require('./routes/public/pingRoutes');
-
 app.use('/ping', pubApiPingRoute);
 
-require('./resolv');
+const pubApiDnsRoute = require('./routes/public/dnsRoutes');
+app.use('/dns_response', pubApiDnsRoute);
 
+//require('./resolv');
 
 
 app.listen(3800, () => {

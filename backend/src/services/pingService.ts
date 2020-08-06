@@ -1,4 +1,3 @@
-
 const arp1 = require('arp-a');
 const cfg = require('config');
 const fs = require('fs');

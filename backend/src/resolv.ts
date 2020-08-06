@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const cfg = require('config');
+
 import ResolvService from './services/resolvService';
 const resolvService = new ResolvService();
 const delay = require('delay');
