@@ -56,7 +56,7 @@ export default class DnsService {
                 if(!(line.split(" ")[1] === dns))
                 listdns= listdns + line + "\n"
             });
-            const promise = new Promise(async (resolve, reject) => {
+            const promise = await new Promise(async (resolve, reject) => {
                 let path = cfg.gateway.path_temp_dns
                 await fs.writeFile(path, listdns, function (err: any) {
                     if (err) console.log(err);
@@ -75,7 +75,7 @@ export default class DnsService {
     async ReplaceResolv(){
 
         try {
-            const { stdout, stderr } = await exec(`sudo cp ${cfg.gateway.path_temp_dns} > ${cfg.gateway.path_resolv}`);
+            const { stdout, stderr } = await exec(`sudo echo ${cfg.gateway.path_temp_dns} > ${cfg.gateway.path_resolv}`);
             //const { stdout, stderr } = await exec(`sudo cp ${path_from} ${path_to}`);
 
             console.log('stdout:', stdout);
