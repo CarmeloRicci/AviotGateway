@@ -40,14 +40,14 @@ export default class DnsService {
         return 's'
     }
 
-    async SendPostRequest (fisrtdns: string){
+    async SendPostRequest (firstdns: string){
 
         let request_data = {
-            url: `http://${cfg.general.ipDnsServer}:3800/ping`,
+            url: `http://${cfg.general.ipDnsServer}:3800/`,
             method: 'POST',
             body: {
                 params: {
-                    ips: fisrtdns
+                    ips: firstdns
                 }
             },
             json: true
