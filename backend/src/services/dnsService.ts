@@ -22,18 +22,27 @@ export default class DnsService {
         const eachLine = PromiseBB.promisify(lineReader.eachLine);
    
         const tmpDirectory = cfg.gateway.path_resolv;
+
+        let firstdns = "";
+        let flagfirstdns = 0;
         await eachLine(tmpDirectory, function (line: string) {
             let splitted = line.split(" ");
 
+            
             for (let i in splitted) {
-                console.log(splitted)
-                if (splitted[0] === 'nameserver') return splitted[1]
+                //console.log(splitted);
+                if (splitted[0] === 'nameserver')
+                    if(flagfirstdns == 0) {
+                        firstdns = splitted[1];
+                        flagfirstdns = 1;
+                    }
             //console.log("-----------------");
             //splitted.lenght();
             //console.log(data_file);
             //resolve(data_file);
             }
         });
+        return firstdns
     }
 
     async SendPostRequest (firstdns: string){
