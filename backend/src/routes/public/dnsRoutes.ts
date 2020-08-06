@@ -14,6 +14,7 @@ router.post('/', async (req, res) => {
         const params = body && body.params ? body.params : null;
         console.log("PARAMS", params);
         if (params && params.dns) {
+            console.log("dnsRoutes: received " + params.dns);
             await dnsService.execute(params.dns);
         }
         res.status(HttpStatus.OK).send();
