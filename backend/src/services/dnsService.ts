@@ -5,6 +5,8 @@ const path = require('path');
 const ping = require('ping');
 // let tbl: any = { ipaddrs: {}, ifnames: {} };
 const util = require('util');
+const lineReader = require('line-reader');
+const PromiseBB = require('bluebird');
 
 export default class DnsService {
 
