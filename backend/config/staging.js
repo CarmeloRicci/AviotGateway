@@ -20,6 +20,7 @@ module.exports = {
     path_mac: "/sys/class/net/dhcpbr/address",
     path_resolv: "/etc/resolv.conf",
     interface_for_resolv: "edge0",
-    path_temp_out: path.join(__dirname, "../file_temp/test_out.txt")
+    path_temp_out: path.join(__dirname, "../file_temp/test_out.txt"),
+    path_temp_dns: path.join(__dirname, "../file_temp/resolv.conf")
   }
 };
