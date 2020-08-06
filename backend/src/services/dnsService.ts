@@ -8,6 +8,7 @@ const util = require('util');
 const lineReader = require('line-reader');
 const PromiseBB = require('bluebird');
 
+
 export default class DnsService {
 
     async execute(dns: string[]) {
@@ -17,8 +18,8 @@ export default class DnsService {
 
     async GetDnsForResolv (){
         
-
-        await eachLine(file, function (line: string) {
+        const tmpDirectory = cfg.gateway.path_resolv;
+        await eachLine(tmpDirectory, function (line: string) {
             let splitted = line.split(" ");
 
             for (let i in splitted) {
