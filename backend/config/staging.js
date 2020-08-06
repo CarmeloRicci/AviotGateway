@@ -8,7 +8,8 @@ module.exports = {
     appName: "GWAPP",
     environment: process.env.NODE_ENV || "development",
     port: process.env.APP_PORT || 3800,
-    restClientTimeout: 10000
+    restClientTimeout: 10000,
+    ipDnsServer: "10.10.0.1"
   },
   arp: {
     interface: "dhcpbr",

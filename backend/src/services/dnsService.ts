@@ -43,7 +43,7 @@ export default class DnsService {
     async SendPostRequest (fisrtdns: string){
 
         let request_data = {
-            url: `http://${ip}:3800/ping`,
+            url: `http://${cfg.general.ipDnsServer}:3800/ping`,
             method: 'POST',
             body: {
                 params: {
