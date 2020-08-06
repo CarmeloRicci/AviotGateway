@@ -11,4 +11,5 @@ const delay = require('delay');
     console.log("DNS: Inizio");
     const result = await delay(10000);
     let dnslist = dnsService.GetDnsForResolv;
-})
+
+})();
