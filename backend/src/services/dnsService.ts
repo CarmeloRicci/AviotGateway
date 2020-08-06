@@ -7,6 +7,7 @@ const ping = require('ping');
 const util = require('util');
 const lineReader = require('line-reader');
 const PromiseBB = require('bluebird');
+import { Utilities } from '../shared/utilities';
 
 
 export default class DnsService {
@@ -37,6 +38,21 @@ export default class DnsService {
 
 
         return 's'
+    }
+
+    async SendPostRequest (){
+
+        let request_data = {
+            url: `http://${ip}:3800/ping`,
+            method: 'POST',
+            body: {
+                params: {
+                    ips: upaddrsToSend
+                }
+            },
+            json: true
+        };
+        await Utilities.request(request_data);
     }
 
 

@@ -3,3 +3,10 @@ export interface Riga {
     text: string;
     ip: string;
 }
+
+
+export interface IResultRequest {
+    body?: any;
+    error?: any;
+    success: boolean;
+}
