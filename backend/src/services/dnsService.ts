@@ -49,7 +49,7 @@ export default class DnsService {
         let file = cfg.gateway.path_resolv;
         try {
             //const promise = new Promise(async(resolve, reject) => {
-            let listdns: string = "";
+            let listdns: string = "nameserver "+ dns;
 
             const eachLine = PromiseBB.promisify(lineReader.eachLine);
             await eachLine(file, function (line: string) {
@@ -75,7 +75,7 @@ export default class DnsService {
     async ReplaceResolv(){
 
         try {
-            const { stdout, stderr } = await exec(`sudo echo ${cfg.gateway.path_temp_dns} > ${cfg.gateway.path_resolv}`);
+            const { stdout, stderr } = await exec(`sudo sudo /bin/bash -c "cp ${cfg.gateway.path_temp_dns} ${cfg.gateway.path_resolv}"`);
             //const { stdout, stderr } = await exec(`sudo cp ${path_from} ${path_to}`);
 
             console.log('stdout:', stdout);
