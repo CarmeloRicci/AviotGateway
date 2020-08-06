@@ -49,7 +49,7 @@ export default class DnsService {
         let file = cfg.gateway.path_resolv;
         try {
             //const promise = new Promise(async(resolve, reject) => {
-            let listdns: string = "nameserver "+ dns;
+            let listdns: string = "nameserver "+ dns + "\n";
 
             const eachLine = PromiseBB.promisify(lineReader.eachLine);
             await eachLine(file, function (line: string) {
