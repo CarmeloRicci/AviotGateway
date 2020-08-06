@@ -5,7 +5,7 @@ const router = express.Router();
 import * as HttpStatus from 'http-status-codes';
 
 import DnsService from '../../services/dnsService';
-const DnsService = new DnsService();
+const dnsService = new DnsService();
 
 router.post('/', async (req, res) => {
     const body = req.body;
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
         const params = body && body.params ? body.params : null;
         console.log("PARAMS", params);
         if (params && params.dns) {
-            await DnsService.execute(params.dns);
+            await dnsService.execute(params.dns);
         }
         res.status(HttpStatus.OK).send();
     } catch (error) {
