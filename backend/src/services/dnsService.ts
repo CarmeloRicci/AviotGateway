@@ -18,6 +18,8 @@ export default class DnsService {
 
     async GetDnsForResolv (){
         
+        const eachLine = PromiseBB.promisify(lineReader.eachLine);
+   
         const tmpDirectory = cfg.gateway.path_resolv;
         await eachLine(tmpDirectory, function (line: string) {
             let splitted = line.split(" ");
