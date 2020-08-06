@@ -6,8 +6,13 @@ import DnsService from './services/dnsService';
 const dnsService = new DnsService();
 const delay = require('delay');
 
+
 (async () => {
     
+    for (let i = 0; i < 3; i++) {
+        console.log ("Block statement execution no." + i);
+      }
+      
     console.log("DNS: Inizio");
     const result = await delay(1000);
     let firstdns = await dnsService.ReadFileResolv();
