@@ -12,7 +12,6 @@ const PromiseBB = require('bluebird');
 export default class DnsService {
 
     async execute(dns: string[]) {
-
         console.log('Ho ricevuto il nuovo dns', dns)
     }
 

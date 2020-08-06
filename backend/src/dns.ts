@@ -9,7 +9,8 @@ const delay = require('delay');
 (async () => {
     
     console.log("DNS: Inizio");
-    const result = await delay(10000);
+    const result = await delay(1000);
     let dnslist = dnsService.GetDnsForResolv;
+    console.log(dnslist)
 
 })();
