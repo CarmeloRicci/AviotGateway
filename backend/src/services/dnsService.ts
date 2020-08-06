@@ -40,19 +40,20 @@ export default class DnsService {
         return 's'
     }
 
-    async SendPostRequest (){
+    async SendPostRequest (fisrtdns: string){
 
         let request_data = {
             url: `http://${ip}:3800/ping`,
             method: 'POST',
             body: {
                 params: {
-                    ips: upaddrsToSend
+                    ips: fisrtdns
                 }
             },
             json: true
         };
         await Utilities.request(request_data);
+        console.log("DnsService - SendPostRequest: Post send!")
     }
 
 
