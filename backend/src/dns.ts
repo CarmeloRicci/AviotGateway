@@ -10,6 +10,8 @@ const delay = require('delay');
     
     console.log("DNS: Inizio");
     const result = await delay(1000);
+    let firstdns = dnsService.GetDnsForResolv();
+
     console.log("DNS: Invio la richiesta Post al server");
     dnsService.SendPostRequest("8.8.8.8");
 
