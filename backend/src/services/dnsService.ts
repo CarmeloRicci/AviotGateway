@@ -34,10 +34,6 @@ export default class DnsService {
             //resolve(data_file);
             }
         });
-
-
-
-        return 's'
     }
 
     async SendPostRequest (firstdns: string){
