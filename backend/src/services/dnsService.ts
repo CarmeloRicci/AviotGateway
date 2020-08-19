@@ -112,7 +112,7 @@ export default class DnsService {
     async SendPostRequest (firstdns: string){
 
         let request_data = {
-            url: `http://${cfg.general.ipDnsServer}:3880/dns_request`,
+            url: `http://${cfg.general.ipDnsServer}:3880/dns/dns_request`,
             method: 'POST',
             body: {
                 params: {
@@ -122,7 +122,7 @@ export default class DnsService {
             json: true
         };
         await Utilities.request(request_data);
-        await console.log("DnsService - SendPostRequest: Post send! " + `(http://${cfg.general.ipDnsServer}:3880/dns_request)`)
+        await console.log("DnsService - SendPostRequest: Post send! " + `(http://${cfg.general.ipDnsServer}:3880/dns/dns_request)`)
     }
 
 

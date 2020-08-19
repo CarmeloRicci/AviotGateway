@@ -40,7 +40,7 @@ const delay = require('delay');
                 console.log("RESOLV: File_Sostituito");
             }
             if (check === "0") {
-                console.log("RESOLV: File non sostituito˘");
+                console.log("RESOLV: File non sostituito");
             }
         } else {
             console.log("Problema...")
