@@ -14,6 +14,7 @@ export default class TestService {
         await dnsService.SendPostRequest(firstdns[0]);
     }
     async watch() {
+        delay(1000)
         fs.watchFile(cfg.gateway.path_resolv, async (curr: any, prev: any) => {
             console.log(`[${new Date().toLocaleString()}] Watching for file changes on: ${cfg.gateway.path_resolv}`);
             console.log("RESOLV: News Changes");
