@@ -11,7 +11,12 @@ app.use('/dns_response', pubApiDnsRoute);
 
 console.log("CIAO");
 //require('./resolv');
-require('./dns');
+//require('./dns');
+import PingService from './dns';
+const pingService = new PingService();
+
+pingService.first();
+pingService.watch();
 
 
 app.listen(3800, () => {

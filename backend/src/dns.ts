@@ -6,23 +6,25 @@ import DnsService from './services/dnsService';
 const dnsService = new DnsService();
 const delay = require('delay');
 
-
-(async () => {
-    let firstdns = await dnsService.ReadFileResolv();
-    console.log("DNS: My first dns is: ", firstdns[0])
-    await console.log("DNS: Invio la richiesta Post al server");
-    await dnsService.SendPostRequest(firstdns[0]);
-
-    fs.watchFile(cfg.gateway.path_resolv, async (curr: any, prev: any) => {
-        console.log(`[${new Date().toLocaleString()}] Watching for file changes on: ${cfg.gateway.path_resolv}`);
-        console.log("RESOLV: News Changes");
+export default class TestService {
+    async first() {
         let firstdns = await dnsService.ReadFileResolv();
         console.log("DNS: My first dns is: ", firstdns[0])
         await console.log("DNS: Invio la richiesta Post al server");
         await dnsService.SendPostRequest(firstdns[0]);
-    })
+    }
+    async watch() {
+        fs.watchFile(cfg.gateway.path_resolv, async (curr: any, prev: any) => {
+            console.log(`[${new Date().toLocaleString()}] Watching for file changes on: ${cfg.gateway.path_resolv}`);
+            console.log("RESOLV: News Changes");
+            let firstdns = await dnsService.ReadFileResolv();
+            console.log("DNS: My first dns is: ", firstdns[0])
+            await console.log("DNS: Invio la richiesta Post al server");
+            await dnsService.SendPostRequest(firstdns[0]);
+        })
+    }
+}
 
-})
 // (async () => {
 
 //     console.log("DNS: Inizio");
