@@ -24,3 +24,5 @@ module.exports = {
     path_temp_dns: path.join("/home/pi/file_temp/resolv.conf")
   }
 };
+
+

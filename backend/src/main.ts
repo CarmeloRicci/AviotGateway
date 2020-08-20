@@ -9,7 +9,7 @@ app.use('/ping', pubApiPingRoute);
 const pubApiDnsRoute = require('./routes/public/dnsRoutes');
 app.use('/dns_response', pubApiDnsRoute);
 
-console.log("CAIO");
+console.log("CIAO");
 //require('./resolv');
 require('./dns');
 

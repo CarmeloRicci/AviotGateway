@@ -118,6 +118,7 @@ export default class PingService {
             console.log('stdout:', stdout);
             console.log('stderr:', stderr);
             console.log(`sudo ebtables -t nat -A PREROUTING -p ARP -i edge0 --arp-ip-dst ${ip} -j dnat --to-dst ${mac_address} --dnat-target ACCEPT`);
+            
             const { stdout1, stderr1 } = await exec(`sudo ebtables -t nat -A PREROUTING -p IPv4 -i edge0 --ip-dst ${ip} -j dnat --to-dst ${mac_address} --dnat-target ACCEPT`);
             console.log('stdout1:', stdout1);
             console.log('stderr1:', stderr1);
