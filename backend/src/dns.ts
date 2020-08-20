@@ -8,6 +8,7 @@ const delay = require('delay');
 
 
 (async () => {
+await delay(5000)
 let firstdns = await dnsService.ReadFileResolv();
 console.log("DNS: My first dns is: ",firstdns[0])
 await console.log("DNS: Invio la richiesta Post al server");
