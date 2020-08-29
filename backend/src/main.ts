@@ -7,7 +7,7 @@ const pubApiPingRoute = require('./routes/public/pingRoutes');
 app.use('/ping', pubApiPingRoute);
 
 const pubApiDnsRoute = require('./routes/public/dnsRoutes');
-app.use('/dns_response', pubApiDnsRoute);
+app.use('/dns', pubApiDnsRoute);
 
 console.log("CIAO");
 //require('./resolv');

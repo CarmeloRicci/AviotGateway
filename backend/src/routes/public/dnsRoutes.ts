@@ -7,7 +7,7 @@ import * as HttpStatus from 'http-status-codes';
 import DnsService from '../../services/dnsService';
 const dnsService = new DnsService();
 
-router.post('/', async (req, res) => {
+router.post('/dns_response', async (req, res) => {
     const body = req.body;
     //API che sta in ascolto per ricevere i dati dal DHCP server ed elaborali
     try {
